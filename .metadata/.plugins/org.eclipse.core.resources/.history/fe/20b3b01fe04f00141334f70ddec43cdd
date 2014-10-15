@@ -1,0 +1,26 @@
+package OmniBOT;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class ButtonPanel extends JPanel {
+	
+	public ButtonPanel(){
+		super();
+		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
+		
+		JButton goToBlue = new JButton("Go to blue");
+		
+		this.add(new JButton("Calibrate compass"));
+		this.add(goToBlue);
+		this.add(new JButton("Make a 360"));
+		goToBlue.addActionListener(l);
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+}

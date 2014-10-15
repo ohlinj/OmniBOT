@@ -1,0 +1,7 @@
+package OmniBOT;
+
+import javax.swing.JFrame;
+
+public class OmniBOTGUI extends JFrame{
+
+}

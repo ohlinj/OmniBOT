@@ -1,0 +1,32 @@
+package testRemote;
+
+public class testTrans {
+	
+	public static void main(String[] args) {
+		double[] motorSpeeds=new double[3];
+		double[] cartSpeeds=new double[3]; // Vx,Vy,Rxy
+		double[][] transformation1 = {{0, 27.7778, -1.2639}, {24.0563, -13.8889, -1.2639}, {-24.0563, -13.8889, -1.2639}};
+		cartSpeeds[0]=0.2;
+		cartSpeeds[1]=0.1;
+		cartSpeeds[2]=0.1;
+		System.out.println("Cartesian Speeds= {"+cartSpeeds[0]+", "+cartSpeeds[1]+", "+cartSpeeds[2]+"} m/s");
+		motorSpeeds=transformCartSpeedstoMotorSpeeds(cartSpeeds,transformation1);
+		System.out.println("Motor Speeds= {"+motorSpeeds[0]+", "+motorSpeeds[1]+", "+motorSpeeds[2]+"} degrees/s");
+	}
+	
+	private static double[] transformCartSpeedstoMotorSpeeds(double[] cartSpeeds, double[][] transformation){
+		double[] motorSpeeds=new double[3];
+		for(int i=0;i<3;i++){
+			motorSpeeds[i]=0;
+		}
+		for(int i=0;i<3;i++){
+			motorSpeeds[0]+=transformation[0][i]*cartSpeeds[i];
+			motorSpeeds[1]+=transformation[1][i]*cartSpeeds[i];
+			motorSpeeds[2]+=transformation[2][i]*cartSpeeds[i];
+		}
+		for(int i=0;i<3;i++){
+			motorSpeeds[i]=(double) Math.toDegrees(motorSpeeds[i]);
+		}
+		return motorSpeeds;
+	}
+}

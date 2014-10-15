@@ -1,0 +1,87 @@
+package OmniBOT;
+
+import org.opencv.core.Core;
+
+
+public class OmniBOTControl {
+	public static void main(String[] args) {
+		// Load the native library.
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+		
+		//Create image processor
+		Processor my_processor = new Processor();
+
+		//Create Interface
+		boolean iWantGUI = true;
+		OmniBOTGUI gui=null;
+		if(iWantGUI){
+			gui = new OmniBOTGUI();
+		}
+		
+		//Create MotorControl
+		MotorControl motorControl = new MotorControl("10.0.1.1");
+		//Create variables
+		boolean trackingBlue=false;
+
+		// If VideoCapture is opened, start looping
+		if (my_processor.capture.isOpened()) {
+			
+			//Set frame size
+			if(iWantGUI){
+				my_processor.readWebcam();
+				gui.setSize((int)my_processor.getImageSize().width,(int) my_processor.getImageSize().height);
+			}
+			
+			//We want to know performance, so we try to extract the fps. First initialize
+			int fps = 0;
+			while (true) {
+				//lets get a startTime for fps calculation
+				long startTime = System.nanoTime();
+
+				//Read from webcam
+				my_processor.readWebcam();
+				
+				//Make sure we get an image, else display error message
+				if (!my_processor.workingImage.empty()) {
+					//detectRedCircle and save to my_processor variables
+					my_processor.detectRedCircle();
+					//detectBlueCircle and save to my_processor variables
+					my_processor.detectBlueCircle();
+					//detectGreenCircle and save to my_processor variables
+					my_processor.detectGreenCircle();
+					
+					if(iWantGUI){
+						//paint circles to processedImage
+						my_processor.paintRedCircle();
+						my_processor.paintBlueCircle();
+						my_processor.paintGreenCircle();
+					}
+					
+					//Print size and fps information on picture
+					my_processor.putSizeAndFPS(fps);
+					
+					//Display the image
+					if(iWantGUI){
+						gui.camera_panel.MatToBufferedImage(my_processor.processedImage); 
+						gui.camera_panel.repaint();
+					}
+					
+					//lets get endTime, then calculate elapsedTime, which can then be used to get an approximate of the fps
+					long endTime = System.nanoTime();
+					long elapsedTime = (endTime-startTime)/1000000;
+					fps = (int) (1000/elapsedTime);
+					
+				} else {
+					//if no image was recorded, show error message and start over
+					System.out.println(" --(!) No captured frame -- Break!");
+					break;
+				}
+				if(gui.buttonPanel.goToBluePressed){
+					motorControl.setSpeedsRobot(motorControl.deltaToCartSpeeds(motorControl.getDelta(my_processor.redCenter, my_processor.blueCenter)));
+				}
+				
+			}
+		}
+		return;
+	}
+}

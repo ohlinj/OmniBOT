@@ -1,0 +1,25 @@
+package OmniBOT;
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+
+public class OmniBOTGUI extends JFrame {
+	private String window_name;
+	private My_Panel my_panel;
+	private ButtonPanel buttonPanel;
+	public OmniBOTGUI() {
+		// Create Interface
+		super();
+		window_name = "OmniBOT - Computer Vision Controlled Robot";
+		this.setName(window_name);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(400, 400);
+		my_panel = new My_Panel();
+		buttonPanel = new ButtonPanel();
+		this.getContentPane().setLayout(
+				new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
+		frame.add(my_panel);
+		frame.add(buttonPanel);
+		frame.setVisible(true);
+	}
+}

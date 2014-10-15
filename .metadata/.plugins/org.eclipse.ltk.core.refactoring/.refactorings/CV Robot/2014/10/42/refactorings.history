@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;OmniBOT.Test.java&apos; to &apos;TestMotorControl.java&apos;&#x0A;- Original project: &apos;CV Robot&apos;&#x0A;- Original element: &apos;OmniBOT.Test.java&apos;&#x0A;- Renamed element: &apos;OmniBOT.TestMotorControl.java&apos;" description="Rename compilation unit &apos;Test.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;OmniBOT{Test.java" name="TestMotorControl.java" references="false" stamp="1413323040812" version="1.0"/>
+</session>

@@ -1,0 +1,93 @@
+package testRemote;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import lejos.hardware.BrickFinder;
+import lejos.hardware.Sound;
+import lejos.hardware.lcd.TextLCD;
+import lejos.hardware.sensor.HiTechnicCompass;
+import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.remote.ev3.RemoteEV3;
+import lejos.utility.Delay;
+
+public class Control extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Control() {
+		super("My Controller");
+		RemoteEV3 ev3 = null;
+		try {
+			ev3 = new RemoteEV3("10.0.1.1");
+			Sound.beep();
+			Sound.beep();
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		ev3.setDefault();
+		final TextLCD lcd = ev3.getTextLCD();
+		lcd.clear();
+		lcd.drawString("Connected", 0, 1);
+		HiTechnicCompass compass= new HiTechnicCompass(ev3.getPort("S1"));
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JButton forward = new JButton("Forward");
+		this.getContentPane().add(forward);
+		final RMIRegulatedMotor a = ev3.createRegulatedMotor("A", 'L');
+		final RMIRegulatedMotor b = ev3.createRegulatedMotor("B", 'L');
+		final RMIRegulatedMotor c = ev3.createRegulatedMotor("C", 'L');
+
+		forward.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Running");
+				try {
+					lcd.clear();
+					lcd.drawString("Running", 0, 1);
+					float maxSpeed = b.getMaxSpeed();
+					float speedFactor = maxSpeed/100f;
+					b.setSpeed((int) (90*speedFactor));
+					b.backward();
+					Delay.msDelay(1000);
+					b.stop(true);
+					c.stop(true);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					a.close();
+					b.close();
+					c.close();
+					lcd.clear();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public static void main(String[] args) {
+		Control control = new Control();
+		control.pack();
+		control.setVisible(true);
+	}
+}

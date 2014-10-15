@@ -1,0 +1,49 @@
+package OmniBOT;
+
+import java.rmi.RemoteException;
+
+import lejos.remote.ev3.RMIRegulatedMotor;
+
+public class MotorControl {
+	public static void setMotorSpeeds(RMIRegulatedMotor a,
+			RMIRegulatedMotor b, RMIRegulatedMotor c, double[] motorSpeeds)
+			throws RemoteException {
+		int aSpeed = (int) Math.round(motorSpeeds[0]);
+		int bSpeed = (int) Math.round(motorSpeeds[1]);
+		int cSpeed = (int) Math.round(motorSpeeds[2]);
+
+		a.setSpeed(aSpeed);
+		b.setSpeed(bSpeed);
+		c.setSpeed(cSpeed);
+
+		if (aSpeed >= 0)
+			a.forward();
+		else
+			a.backward();
+		if (bSpeed >= 0)
+			b.forward();
+		else
+			b.backward();
+		if (cSpeed >= 0)
+			c.forward();
+		else
+			c.backward();
+	}
+
+	public static double[] transformCartSpeedstoMotorSpeeds(
+			double[] cartSpeeds, double[][] transformation) {
+		double[] motorSpeeds = new double[3];
+		for (int i = 0; i < 3; i++) {
+			motorSpeeds[i] = 0;
+		}
+		for (int i = 0; i < 3; i++) {
+			motorSpeeds[0] += transformation[0][i] * cartSpeeds[i];
+			motorSpeeds[1] += transformation[1][i] * cartSpeeds[i];
+			motorSpeeds[2] += transformation[2][i] * cartSpeeds[i];
+		}
+		for (int i = 0; i < 3; i++) {
+			motorSpeeds[i] = (double) Math.toDegrees(motorSpeeds[i]);
+		}
+		return motorSpeeds;
+	}
+}

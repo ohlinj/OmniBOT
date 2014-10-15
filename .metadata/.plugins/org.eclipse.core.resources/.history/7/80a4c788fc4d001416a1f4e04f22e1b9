@@ -1,0 +1,79 @@
+package testRemote;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.rmi.RemoteException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import lejos.hardware.BrickFinder;
+import lejos.hardware.lcd.TextLCD;
+import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.remote.ev3.RemoteEV3;
+import lejos.utility.Delay;
+
+public class Control extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Control() {
+		super("My Controller");
+		RemoteEV3 ev3 = new RemoteEV3("192.168.0.9");
+		ev3.setDefault();
+		Sound.beep();
+		
+		final TextLCD lcd = ev3.getTextLCD();
+		lcd.clear();
+		lcd.drawString("Testing", 0, 1, true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JButton forward = new JButton("Forward");
+		this.getContentPane().add(forward);
+		final RMIRegulatedMotor a = ev3.createRegulatedMotor("A", 'L');
+		final RMIRegulatedMotor b = ev3.createRegulatedMotor("B", 'L');
+		final RMIRegulatedMotor c = ev3.createRegulatedMotor("C", 'L');
+
+		forward.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("Running");
+				try {
+					lcd.clear();
+					lcd.drawString("Running", 0, 1);
+					b.setSpeed((int) a.getMaxSpeed());
+					c.backward();
+					Delay.msDelay(1000);
+					b.stop(true);
+					c.stop(true);
+				} catch (RemoteException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					a.close();
+					b.close();
+					c.close();
+					lcd.clear();
+				} catch (RemoteException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public static void main(String[] args) {
+		Control control = new Control();
+		control.pack();
+		control.setVisible(true);
+	}
+}

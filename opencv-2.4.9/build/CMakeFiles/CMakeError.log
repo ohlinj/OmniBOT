@@ -1,0 +1,974 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3693620513/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3693620513.dir/build.make CMakeFiles/cmTryCompileExec3693620513.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3693620513.dir/TestEndianess.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3693620513.dir/TestEndianess.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec3693620513
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3693620513.dir/link.txt --verbose=1
+/usr/bin/gcc     -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec3693620513.dir/TestEndianess.c.o  -o cmTryCompileExec3693620513  
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining size of off64_t failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4271814225/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4271814225.dir/build.make CMakeFiles/cmTryCompileExec4271814225.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4271814225.dir/OFF64_T.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec4271814225.dir/OFF64_T.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:19:12: error: use of undeclared identifier 'off64_t'; did you mean 'off_t'?
+  ('0' + ((SIZE / 10000)%10)),
+           ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:17:22: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(off64_t))
+                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/sys/_types/_off_t.h:30:25: note: 'off_t' declared here
+typedef __darwin_off_t          off_t;
+                                ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:20:12: error: use of undeclared identifier 'off64_t'; did you mean 'off_t'?
+  ('0' + ((SIZE / 1000)%10)),
+           ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:17:22: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(off64_t))
+                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/sys/_types/_off_t.h:30:25: note: 'off_t' declared here
+typedef __darwin_off_t          off_t;
+                                ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:21:12: error: use of undeclared identifier 'off64_t'; did you mean 'off_t'?
+  ('0' + ((SIZE / 100)%10)),
+           ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:17:22: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(off64_t))
+                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/sys/_types/_off_t.h:30:25: note: 'off_t' declared here
+typedef __darwin_off_t          off_t;
+                                ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:22:12: error: use of undeclared identifier 'off64_t'; did you mean 'off_t'?
+  ('0' + ((SIZE / 10)%10)),
+           ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:17:22: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(off64_t))
+                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/sys/_types/_off_t.h:30:25: note: 'off_t' declared here
+typedef __darwin_off_t          off_t;
+                                ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:23:12: error: use of undeclared identifier 'off64_t'; did you mean 'off_t'?
+  ('0' +  (SIZE    % 10)),
+           ^
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:17:22: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(off64_t))
+                     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/sys/_types/_off_t.h:30:25: note: 'off_t' declared here
+typedef __darwin_off_t          off_t;
+                                ^
+5 errors generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4271814225.dir/OFF64_T.c.o] Error 1
+make: *** [cmTryCompileExec4271814225/fast] Error 2
+
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CheckTypeSize/OFF64_T.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(off64_t))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2514092834/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2514092834.dir/build.make CMakeFiles/cmTryCompileExec2514092834.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2514092834.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2514092834.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'io.h' file not found
+#include <io.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2514092834.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2514092834/fast] Error 2
+
+
+Determining if the function jbg_newlen exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1200415198/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1200415198.dir/build.make CMakeFiles/cmTryCompileExec1200415198.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1200415198.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3 -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1200415198.dir/CheckFunctionExists.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.0/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1200415198
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1200415198.dir/link.txt --verbose=1
+/usr/bin/gcc     -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3 -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTryCompileExec1200415198.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1200415198  
+Undefined symbols for architecture x86_64:
+  "_jbg_newlen", referenced from:
+      _main in CheckFunctionExists.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTryCompileExec1200415198] Error 1
+make: *** [cmTryCompileExec1200415198/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3963427389/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3963427389.dir/build.make CMakeFiles/cmTryCompileExec3963427389.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3963427389.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3963427389.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3963427389.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3963427389/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3823739277/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3823739277.dir/build.make CMakeFiles/cmTryCompileExec3823739277.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3823739277.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3823739277.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3823739277.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3823739277/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1804230578/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1804230578.dir/build.make CMakeFiles/cmTryCompileExec1804230578.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1804230578.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1804230578.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1804230578.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1804230578/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec744372208/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec744372208.dir/build.make CMakeFiles/cmTryCompileExec744372208.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec744372208.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec744372208.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec744372208.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec744372208/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1140579229/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1140579229.dir/build.make CMakeFiles/cmTryCompileExec1140579229.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1140579229.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1140579229.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1140579229.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1140579229/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3155804859/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3155804859.dir/build.make CMakeFiles/cmTryCompileExec3155804859.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3155804859.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3155804859.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3155804859.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3155804859/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3085302579/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3085302579.dir/build.make CMakeFiles/cmTryCompileExec3085302579.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3085302579.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3085302579.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3085302579.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3085302579/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2754180091/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2754180091.dir/build.make CMakeFiles/cmTryCompileExec2754180091.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2754180091.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2754180091.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2754180091.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2754180091/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4031208684/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4031208684.dir/build.make CMakeFiles/cmTryCompileExec4031208684.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4031208684.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec4031208684.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4031208684.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec4031208684/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1954833528/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1954833528.dir/build.make CMakeFiles/cmTryCompileExec1954833528.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1954833528.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1954833528.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1954833528.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1954833528/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1793274063/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1793274063.dir/build.make CMakeFiles/cmTryCompileExec1793274063.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1793274063.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1793274063.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1793274063.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1793274063/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2505444607/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2505444607.dir/build.make CMakeFiles/cmTryCompileExec2505444607.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2505444607.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2505444607.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2505444607.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2505444607/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1498811865/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1498811865.dir/build.make CMakeFiles/cmTryCompileExec1498811865.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1498811865.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1498811865.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1498811865.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1498811865/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2913045825/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2913045825.dir/build.make CMakeFiles/cmTryCompileExec2913045825.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2913045825.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2913045825.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2913045825.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2913045825/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2751550147/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2751550147.dir/build.make CMakeFiles/cmTryCompileExec2751550147.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2751550147.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2751550147.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2751550147.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2751550147/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec896140299/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec896140299.dir/build.make CMakeFiles/cmTryCompileExec896140299.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec896140299.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec896140299.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec896140299.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec896140299/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2677547299/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2677547299.dir/build.make CMakeFiles/cmTryCompileExec2677547299.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2677547299.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2677547299.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2677547299.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2677547299/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec134239257/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec134239257.dir/build.make CMakeFiles/cmTryCompileExec134239257.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec134239257.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec134239257.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec134239257.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec134239257/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1130523623/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1130523623.dir/build.make CMakeFiles/cmTryCompileExec1130523623.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1130523623.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1130523623.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1130523623.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1130523623/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3651490435/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3651490435.dir/build.make CMakeFiles/cmTryCompileExec3651490435.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3651490435.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3651490435.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3651490435.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3651490435/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3017157801/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3017157801.dir/build.make CMakeFiles/cmTryCompileExec3017157801.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3017157801.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3017157801.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3017157801.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3017157801/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2927235921/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2927235921.dir/build.make CMakeFiles/cmTryCompileExec2927235921.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2927235921.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2927235921.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2927235921.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2927235921/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2771461924/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2771461924.dir/build.make CMakeFiles/cmTryCompileExec2771461924.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2771461924.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2771461924.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2771461924.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2771461924/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3387950102/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3387950102.dir/build.make CMakeFiles/cmTryCompileExec3387950102.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3387950102.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3387950102.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3387950102.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3387950102/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3679766471/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3679766471.dir/build.make CMakeFiles/cmTryCompileExec3679766471.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3679766471.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3679766471.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3679766471.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3679766471/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3817091550/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3817091550.dir/build.make CMakeFiles/cmTryCompileExec3817091550.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3817091550.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3817091550.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3817091550.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3817091550/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3003316208/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3003316208.dir/build.make CMakeFiles/cmTryCompileExec3003316208.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3003316208.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3003316208.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3003316208.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3003316208/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec957680177/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec957680177.dir/build.make CMakeFiles/cmTryCompileExec957680177.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec957680177.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec957680177.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec957680177.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec957680177/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec589603191/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec589603191.dir/build.make CMakeFiles/cmTryCompileExec589603191.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec589603191.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec589603191.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec589603191.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec589603191/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec753776544/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec753776544.dir/build.make CMakeFiles/cmTryCompileExec753776544.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec753776544.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec753776544.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec753776544.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec753776544/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3408938084/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3408938084.dir/build.make CMakeFiles/cmTryCompileExec3408938084.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3408938084.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3408938084.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3408938084.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3408938084/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3994892624/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3994892624.dir/build.make CMakeFiles/cmTryCompileExec3994892624.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3994892624.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3994892624.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3994892624.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3994892624/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec926113972/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec926113972.dir/build.make CMakeFiles/cmTryCompileExec926113972.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec926113972.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec926113972.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec926113972.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec926113972/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec503478245/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec503478245.dir/build.make CMakeFiles/cmTryCompileExec503478245.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec503478245.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec503478245.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec503478245.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec503478245/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1912813639/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1912813639.dir/build.make CMakeFiles/cmTryCompileExec1912813639.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1912813639.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1912813639.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1912813639.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1912813639/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2906973906/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2906973906.dir/build.make CMakeFiles/cmTryCompileExec2906973906.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2906973906.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2906973906.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2906973906.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2906973906/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec331734942/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec331734942.dir/build.make CMakeFiles/cmTryCompileExec331734942.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec331734942.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec331734942.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec331734942.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec331734942/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3163293032/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3163293032.dir/build.make CMakeFiles/cmTryCompileExec3163293032.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3163293032.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3163293032.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3163293032.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3163293032/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3718666627/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec3718666627.dir/build.make CMakeFiles/cmTryCompileExec3718666627.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3718666627.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec3718666627.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3718666627.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec3718666627/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1416286913/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1416286913.dir/build.make CMakeFiles/cmTryCompileExec1416286913.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1416286913.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1416286913.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1416286913.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1416286913/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec757694498/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec757694498.dir/build.make CMakeFiles/cmTryCompileExec757694498.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec757694498.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec757694498.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec757694498.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec757694498/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1785863114/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1785863114.dir/build.make CMakeFiles/cmTryCompileExec1785863114.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1785863114.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1785863114.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1785863114.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1785863114/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1556025644/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1556025644.dir/build.make CMakeFiles/cmTryCompileExec1556025644.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1556025644.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1556025644.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1556025644.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1556025644/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec415729773/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec415729773.dir/build.make CMakeFiles/cmTryCompileExec415729773.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec415729773.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec415729773.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec415729773.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec415729773/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec440402579/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec440402579.dir/build.make CMakeFiles/cmTryCompileExec440402579.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec440402579.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec440402579.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec440402579.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec440402579/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2283340665/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec2283340665.dir/build.make CMakeFiles/cmTryCompileExec2283340665.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2283340665.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec2283340665.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev.h' file not found
+#include <linux/videodev.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2283340665.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec2283340665/fast] Error 2
+
+
+Determining if the include file linux/videodev2.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec986905929/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec986905929.dir/build.make CMakeFiles/cmTryCompileExec986905929.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec986905929.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec986905929.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'linux/videodev2.h' file not found
+#include <linux/videodev2.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec986905929.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec986905929/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4256797905/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4256797905.dir/build.make CMakeFiles/cmTryCompileExec4256797905.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4256797905.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec4256797905.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'sys/videoio.h' file not found
+#include <sys/videoio.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4256797905.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec4256797905/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1234495267/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec1234495267.dir/build.make CMakeFiles/cmTryCompileExec1234495267.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1234495267.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec1234495267.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'libavformat/avformat.h' file not found
+#include <libavformat/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1234495267.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec1234495267/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4136531836/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTryCompileExec4136531836.dir/build.make CMakeFiles/cmTryCompileExec4136531836.dir/build
+/Applications/CMake.app/Contents/bin/cmake -E cmake_progress_report /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4136531836.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -fsigned-char -W -Werror=return-type -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -fno-omit-frame-pointer -msse -msse2 -msse3  -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk   -o CMakeFiles/cmTryCompileExec4136531836.dir/CheckIncludeFile.c.o   -c /Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/gustaffjaestad/Documents/Programmering/LEGO/opencv-2.4.9/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'ffmpeg/avformat.h' file not found
+#include <ffmpeg/avformat.h>
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4136531836.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTryCompileExec4136531836/fast] Error 2
+
+

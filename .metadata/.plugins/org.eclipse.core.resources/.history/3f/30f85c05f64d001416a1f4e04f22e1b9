@@ -1,0 +1,24 @@
+package testRemote;
+
+public class testTrans {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	private static double[] transformCartSpeedstoMotorSpeeds(double[] cartSpeeds, double[][] transformation){
+		double[] motorSpeeds=new double[3];
+		for(int i=0;i<3;i++){
+			motorSpeeds[i]=0;
+		}
+		for(int i=0;i<3;i++){
+			motorSpeeds[0]+=transformation[0][i]*cartSpeeds[i];
+			motorSpeeds[1]+=transformation[1][i]*cartSpeeds[i];
+			motorSpeeds[2]+=transformation[2][i]*cartSpeeds[i];
+		}
+		for(int i=0;i<3;i++){
+			motorSpeeds[i]=(double) Math.toDegrees(motorSpeeds[i]);
+		}
+		return motorSpeeds;
+	}
+}

@@ -1,0 +1,8 @@
+package testRemote;
+
+public class testTrans {
+	
+	public static void main(String[] args) {
+		
+	}
+}

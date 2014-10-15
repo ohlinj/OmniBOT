@@ -1,0 +1,99 @@
+package OmniBOT;
+
+import java.awt.BorderLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
+import org.opencv.highgui.VideoCapture;
+import org.opencv.imgproc.Imgproc;
+
+import lejos.hardware.Sound;
+import lejos.hardware.lcd.TextLCD;
+import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.remote.ev3.RemoteEV3;
+import lejos.utility.Delay;
+
+public class OmniBOTControl {
+	public static void main(String[] args) {
+		// Load the native library.
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+		
+		//Create image processor
+		Processor my_processor = new Processor();
+
+		//Create Interface
+		boolean iWantGUI = true;
+		OmniBOTGUI gui=null;
+		if(iWantGUI){
+			gui = new OmniBOTGUI();
+
+		}
+
+		// If VideoCapture is opened, start looping
+		if (my_processor.capture.isOpened()) {
+			
+			//Set frame size
+			if(iWantGUI){
+				my_processor.readWebcam();
+				gui.setSize((int)my_processor.getImageSize().width,(int) my_processor.getImageSize().height);
+			}
+			
+			//We want to know performance, so we try to extract the fps. First initialize
+			int fps = 0;
+			while (true) {
+				//lets get a startTime for fps calculation
+				long startTime = System.nanoTime();
+
+				//Read from webcam
+				my_processor.readWebcam();
+				
+				//Make sure we get an image, else display error message
+				if (!my_processor.workingImage.empty()) {
+					//detectRedCircle and save to my_processor variables
+					my_processor.detectRedCircle();
+					//detectRedCircle and save to my_processor variables
+					my_processor.detectBlueCircle();
+					
+					if(iWantGUI){
+						//paint circles to processedImage
+						my_processor.paintRedCircle();
+						my_processor.paintBlueCircle();
+					}
+					
+					//Print size and fps information on picture
+					my_processor.putSizeAndFPS(fps);
+					
+					//Display the image
+					if(iWantGUI){
+						gui.camera_panel.MatToBufferedImage(my_processor.processedImage); 
+						gui.camera_panel.repaint();
+					}
+					
+					//lets get endTime, then calculate elapsedTime, which can then be used to get an approximate of the fps
+					long endTime = System.nanoTime();
+					long elapsedTime = (endTime-startTime)/1000000;
+					fps = (int) (1000/elapsedTime);
+					
+				} else {
+					//if no image was recorded, show error message and start over
+					System.out.println(" --(!) No captured frame -- Break!");
+					break;
+				}
+			}
+		}
+		return;
+	}
+	
+	public void startEV3(){
+		
+	}
+	
+}
